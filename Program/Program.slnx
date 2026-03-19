@@ -4,5 +4,6 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="../Class1th (Single Linked List)/Class1th (Single Linked List).vcxproj" Id="1ed8204f-3850-441b-8265-bf0644d90cba" />
+  <Project Path="../Class2th(Double Linked List)/Class2th(Double Linked List).vcxproj" Id="323282c4-271f-4cfe-b9c7-4c844565d3ff" />
   <Project Path="Program.vcxproj" Id="796afa06-f3bd-4ef5-83a8-fdd7c6d9cbf8" />
 </Solution>

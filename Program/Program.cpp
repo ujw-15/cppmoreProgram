@@ -10,130 +10,71 @@ private:
 	{
 		T data;
 		Node* next;
-		Node* previous;
 	};
 
 	Node* head;
-	Node* tail;
 	int size;
 public:
 	List()
 	{
 		head = nullptr;
-		tail = nullptr;
 		size = 0;
 	}
-	
-	void push_front(T data)
-	{
-		Node* newNode = new Node;
-
-		newNode->data = data;
-		newNode->next = nullptr;
-		newNode->previous = nullptr;
-
-		if (head == nullptr)
-		{
-			head = newNode;
-			tail = newNode;
-		}
-		else
-		{
-			newNode->previous = newNode;
-		
-			newNode->next = head;
-
-			head = newNode;
-		}
-		
-		size++;
-	}
-
-	void pop_front()
-	{
-		if (head == nullptr)
-		{
-			cout << "linked list is empty" << endl;
-		}
-		else
-		{
-			Node* deleteNode = head;
-
-			if (head == tail)
-			{
-				head = nullptr;
-				tail = nullptr;
-			}
-			else
-			{
-				deleteNode->next->previous = nullptr;
-
-				head = head->next;
-			}
-
-			delete deleteNode;
-
-			size--;
-		}
-		
-	}
-
 
 	void push_back(T data)
 	{
 		Node* newNode = new Node;
-		
 		newNode->data = data;
-		newNode->next = nullptr;
-		newNode->previous = nullptr;
 
-		if (tail == nullptr)
+		if (head == nullptr)
 		{
 			head = newNode;
-			tail = newNode;
+
+			newNode->next = head;
 		}
 		else
 		{
-			tail->next = newNode;
+			newNode->next = head->next;
 
-			newNode->previous = tail;
+			head->next = newNode;
 
-			tail = newNode;
+			head = newNode;
 		}
-
+	
 		size++;
 	}
 
-	const bool& empty()
+	void pop_back()
 	{
-		return	head == nullptr;
-	}
-
-	~List()
-	{
-		while (head != nullptr)
+		Node* deleteNode = head;
+		Node* currentNode = head;
+		if (head == nullptr)
 		{
-			pop_front();
+			cout << "Linked list is empty" << endl;
 		}
+
+		while (currentNode->next != head)
+		{
+			currentNode = currentNode->next;
+			size++;
+		}
+
+		currentNode->next = head->next;
+		head = currentNode;
+		deleteNode = head;
+
 	}
 };
+
+
 
 int main()
 {
 	List<int>list;
 
-	list.push_front(10);
-	list.push_front(5);
-	
+	list.push_back(10);
 	list.push_back(20);
 	list.push_back(30);
 
-	list.pop_front();
-	list.pop_front();
-	list.pop_front();
-
-
 	return 0;
 }
-
-
