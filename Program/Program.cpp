@@ -3,78 +3,30 @@
 using namespace std;
 
 template<typename T>
-class List
+class Vector
 {
 private:
-	struct Node
-	{
-		T data;
-		Node* next;
-	};
+	int count;
+	int capacity;
 
-	Node* head;
-	int size;
+	T* pointer;
 public:
-	List()
+	Vector()
 	{
-		head = nullptr;
-		size = 0;
+		count = 0;
+		capacity = 0;
+		pointer = nullptr;
 	}
 
-	void push_back(T data)
+	void resize(int newSize)
 	{
-		Node* newNode = new Node;
-		newNode->data = data;
-
-		if (head == nullptr)
-		{
-			head = newNode;
-
-			newNode->next = head;
-		}
-		else
-		{
-			newNode->next = head->next;
-
-			head->next = newNode;
-
-			head = newNode;
-		}
-	
-		size++;
-	}
-
-	void pop_back()
-	{
-		Node* deleteNode = head;
-		Node* currentNode = head;
-		if (head == nullptr)
-		{
-			cout << "Linked list is empty" << endl;
-		}
-
-		while (currentNode->next != head)
-		{
-			currentNode = currentNode->next;
-			size++;
-		}
-
-		currentNode->next = head->next;
-		head = currentNode;
-		deleteNode = head;
-
+		pointer * capacity = new Node;
 	}
 };
 
-
-
 int main()
 {
-	List<int>list;
-
-	list.push_back(10);
-	list.push_back(20);
-	list.push_back(30);
+	Vector<int> vector;
 
 	return 0;
 }
