@@ -6,5 +6,6 @@
   <Project Path="../Class1th (Single Linked List)/Class1th (Single Linked List).vcxproj" Id="1ed8204f-3850-441b-8265-bf0644d90cba" />
   <Project Path="../Class2th(Double Linked List)/Class2th(Double Linked List).vcxproj" Id="323282c4-271f-4cfe-b9c7-4c844565d3ff" />
   <Project Path="../Class3th (Circle Linked List)/Class3th (Circle Linked List).vcxproj" Id="8a15169d-07ef-4edd-a2a3-eb46412d2dc9" />
+  <Project Path="../Class4th (Vector)/Class4th (Vector).vcxproj" Id="dbdfccb8-a914-4389-be7c-d78572053b70" />
   <Project Path="Program.vcxproj" Id="796afa06-f3bd-4ef5-83a8-fdd7c6d9cbf8" />
 </Solution>
