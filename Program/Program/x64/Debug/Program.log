@@ -1,17 +1,23 @@
 ﻿  Program.cpp
-C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(91,10): error C3867: 'PriorrtyQueue<int>::size': 비표준 구문입니다. '&'를 사용하여 멤버 포인터를 만드세요.
-      C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(91,10):
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4311: '형식 캐스트': 'KEY'에서 'unsigned int'(으)로 포인터가 잘립니다.
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4311:         with
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4311:         [
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4311:             KEY=const char *
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4311:         ]
+      C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10):
       템플릿 인스턴스화 컨텍스트(가장 오래된 인스턴스화 컨텍스트)가
-          C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(102,20):
-          컴파일되는 클래스 템플릿 인스턴스화 'PriorrtyQueue<int>'에 대한 참조를 확인하세요.
-          C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(89,13):
-          클래스 템플릿 멤버 함수 'const int &PriorrtyQueue<int>::size(void)'을(를) 컴파일하는 중입니다.
-              C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(110,62):
-              'main'에서 'PriorrtyQueue<int>::size'에 대한 첫 번째 참조를 확인하세요.
+          C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(53,20):
+          컴파일되는 함수 템플릿 인스턴스화 'unsigned int HashTable<const char *,int>::hash_function<const char*>(KEY)'에 대한 참조를 확인하세요.
+          with
+          [
+              KEY=const char *
+          ]
+              C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(53,7):
+              'main'에서 'HashTable<const char *,int>::hash_function'에 대한 첫 번째 참조를 확인하세요.
   
-C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(91,10): error C2440: 'return': 'const int &(__cdecl PriorrtyQueue<int>::* )(void)'에서 'const int &'(으)로 변환할 수 없습니다.
-      C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(91,10):
-      원인: 'const int &(__cdecl PriorrtyQueue<int>::* )(void)'에서 'const int'(으)로 변환할 수 없습니다.
-      C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(91,10):
-      이 변환이 가능한 컨텍스트가 없습니다.
-  
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4302: '형식 캐스트': 'KEY'에서 'unsigned int'(으)로 잘립니다.
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4302:         with
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4302:         [
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4302:             KEY=const char *
+C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\Program.cpp(46,10): warning C4302:         ]
+  Program.vcxproj -> C:\Users\ujw12\OneDrive\Desktop\cppmoreProgram\Program\x64\Debug\Program.exe

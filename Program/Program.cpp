@@ -1,113 +1,58 @@
 ﻿#include <iostream>
 
 using namespace std;
-template<typename T>
-class PriorrtyQueue
+
+
+template<typename KEY, typename VALUE>
+class HashTable
 {
 private:
-	int index;
+	struct Node
+	{
+		KEY key;
+		VALUE value;
+
+		Node* next;
+	};
+
+	struct  Bucket
+	{
+		int count;
+		Node* head;
+	};
+
+	int size;
 	int capacity;
 
-	T* container;
+	Bucket* bucket;
 public:
-	PriorrtyQueue()
+	HashTable()
 	{
-		index = 0;
-		capacity = 0;
-		container = nullptr;
-	}
+		size = 0;
+		capacity = 8;
 
-	void resize(int newSize)
-	{
-		
-		capacity = newSize;
-
-		T* temporary = new T[capacity];
+		bucket = new Bucket[capacity];
 
 		for (int i = 0; i < capacity; i++)
 		{
-			temporary[i] = NULL;
-		}
-
-		for (int i = 0; i < index; i++)
-		{
-			temporary[i] = container[i];
-		}
-		delete[] container;
-
-		container = temporary;
-		
-	}
-
-	void push(T data)
-	{
-		if (capacity <= 0)
-		{
-			resize(1);
-		}
-		else if (index >= capacity)
-		{
-			resize(capacity * 2);
-		}
-
-		container[index++] = data;
-
-		int child = index - 1;
-		int parent = (child - 1) / 2;
-
-		while (child > 0)
-		{
-			if (container[parent] < container[child])
-			{
-				std::swap(container[parent], container[child]);
-			}
-
-			child = parent;
-
-			parent = (child - 1) / 2;
+			bucket[i].head = nullptr;
+			bucket[i].count = 0;
 		}
 	}
 
-	void pop()
+	template<typename KEY>
+	unsigned int hash_function(KEY key)
 	{
-
-	}
-
-	~PriorrtyQueue()
-	{
-		if (container != nullptr)
-		{
-			delete[] container;
-		}
-	}
-
-	const T & top()
-	{
-		return container[0];
-	}
-
-	const int& size()
-	{
-		return size;
-	}
-
-	const bool& empty()
-	{
-		return index <= 0;
+		return (unsigned)key % capacity;
 	}
 };
-
 int main()
 {
-	PriorrtyQueue<int>priorrtyQueue;
+	HashTable<const char *, int> hashtable;
 
-	priorrtyQueue.push(10);
-	priorrtyQueue.push(50);
-	priorrtyQueue.push(70);
-	priorrtyQueue.push(5);
-	priorrtyQueue.push(30);
-
-	cout << "Priority Queue is Size : " << priorrtyQueue.size() << endl;
+	cout << hashtable.hash_function("Bami's Cinder");
+	cout << hashtable.hash_function("Bami's Cindr");
+	cout << hashtable.hash_function("Bami's Cder");
 
 	return 0;
 }
